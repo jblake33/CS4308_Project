@@ -65,14 +65,22 @@ namespace CS4308_Project
 
 		//The ROOT node of the parse tree that the parser generates "in the background". This will get passed to the interpreter.
 		public static ParseTreeNode? parseTree;
-		public void RunParser()
+		public void RunParser(string filename = "")
         {
 			//Start by running the scanner
 			Scanner scan = new Scanner();
-			Console.WriteLine("-------------SCANNER----------------");
+			if (!string.IsNullOrEmpty(filename))
+			{
+				scan.filename = filename;
+			}
 			scan.RunScanner();
 			parserList = Scanner.parserList;
-
+			if (parserList.Count == 0)
+			{
+                Console.WriteLine($"The source file \"{scan.filename}\" did not produce any executable code.");
+				return;
+            }
+			Console.WriteLine("-------------SCANNER----------------");
 			Console.WriteLine("Line\tToken\tLexeme");
 			foreach(string[] s in parserList)
             {

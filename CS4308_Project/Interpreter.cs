@@ -32,11 +32,15 @@ namespace CS4308_Project
 
 		//The ROOT node of the parse tree that the parser generates "in the background". This will get passed to the interpreter.
 		public static ParseTreeNode? parseTree;
-		public static void Main(String[] args)
+		public void RunInterpreter(string filename = "")
 		{
 			Parser parser = new Parser();
-			parser.RunParser();
+			parser.RunParser(filename);
 			parseTree = Parser.parseTree;
+			if (parseTree == null)
+			{
+				return;
+			}
 			Console.WriteLine("-------------INTERPRETER----------------");
 			if (Parser.errorMsgList.Count > 0)
 			{
@@ -46,7 +50,8 @@ namespace CS4308_Project
 			}
 			else
 			{
-				Program(parseTree);
+                Console.WriteLine("Program output:");
+                Program(parseTree);
 			}
 		}
 		
@@ -68,14 +73,12 @@ namespace CS4308_Project
 		////<program> → function id () <block> end
 		static void Program(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Program"); //debug!!
 			Block(node.children[2]);
 		}
 		//<block> → <statement> | <statement> <block>
 		//This expands in a recursive fashion, a block can have any number of statements (but at least one).
 		static void Block(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Block, has # children: " + node.children.Count); //debug!!
 			
 			Stmt(node.children[0]);
 			if (node.children.Count == 2)
@@ -86,7 +89,6 @@ namespace CS4308_Project
 		//<statement> → <if_statement> | <assignment_statement> | <while_statement> | <print_statement> | <repeat_statement>
 		static void Stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Stmt"); //debug!!
 			string stmt_type = node.children[0].data;
 			switch(stmt_type)
             {
@@ -111,7 +113,6 @@ namespace CS4308_Project
 		// <if_statement> → if <boolean_expression> then <block> else <block> end
 		static void If_stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to If_stmt"); //debug!!
 			if (Bool_expr(node.children[1]))
             {
 				Block(node.children[3]);
@@ -126,7 +127,6 @@ namespace CS4308_Project
 		//This method is recursive by nature.
 		static void While_stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to While_stmt"); //debug!!
 			if (Bool_expr(node.children[1]))
 			{
 				Block(node.children[3]);
@@ -137,7 +137,6 @@ namespace CS4308_Project
 		//<assignment_statement> -> id <assignment_op> <arithmetic_expression> 
 		static void Asgn_stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Asgn_stmt"); //debug!!
 			//Get the id name
 			string id = node.children[0].children[0].data;
 			//Check if the ID is already in symbol table
@@ -156,7 +155,6 @@ namespace CS4308_Project
 		//Syntax is that of a do while loop, it is treated as such.
 		static void Repeat_stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Repeat_stmt"); //debug!!
 			Block(node.children[1]);
 			if (Bool_expr(node.children[3]))
             {
@@ -167,14 +165,12 @@ namespace CS4308_Project
 		//<print_statement> → print( <arithmetic_expression> )
 		static void Print_stmt(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Print_stmt"); //debug!!
 			Console.WriteLine(Arithmetic_expr(node.children[1]));
 		}
 
 		//<boolean_expression> → <relative_op> <arithmetic_expression> <arithmetic_expression>
 		static bool Bool_expr(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Bool_expr"); //debug!!
 			string op = node.children[0].children[0].data;
 			int leftHS = Arithmetic_expr(node.children[1]);
 			int rightHS = Arithmetic_expr(node.children[2]);
@@ -200,7 +196,6 @@ namespace CS4308_Project
 		//Returns an integer value, computed from a arithmetic expression (e.g. 4+3/x*r)
 		static int Arithmetic_expr(ParseTreeNode node)
 		{
-			//Console.WriteLine("Passed: " + node.data + " to Arith_expr"); //debug!!
 			string expr = Create_Arith_Expr(node);
 			DataTable dt = new DataTable();
 			var v = dt.Compute(expr, "");

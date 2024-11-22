@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vfxM2YCOcjcJ8X6eOxDD4PZhDNgtw3BGN2OGXb5xftudQI/Fe8haCx4rgJZetjAjrHYuNvI7elwqV4v3SVnDmw==",
+  "dgSpecHash": "6gwZ50miHedmzUivO/yba0RT7lXcxAZ4U4MmSWJe69/LEovPwBlc7z1YBv3a5jOnxSjYEeh2kFBiIuAzL32LUQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jcb13\\source\\repos\\CS4308_Project\\CS4308_Project\\CS4308_Project.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jcb13\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\jcb13\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\jcb13\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.33\\microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\jcb13\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\6.0.33\\microsoft.netcore.app.host.win-x86.6.0.33.nupkg.sha512"
+  ],
   "logs": []
 }

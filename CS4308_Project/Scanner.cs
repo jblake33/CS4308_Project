@@ -20,10 +20,13 @@ namespace CS4308_Project
 	{
 		//This list is what gets passed from the scanner to the parser.
 		public static List<string[]> parserList = new List<string[]>();
-		
-		
-		//Keywords are reserved words that may not be used as variable names. https://docs.julialang.org/en/v1/base/base/#Keywords
-		static string[] keyword_table =
+
+		//This is the name of the program file to be scanned. If it doesn't exist in the proper location, an empty "MyProgramEditor.txt" should be created
+		public static string DEFAULT_FILENAME = "MyProgramEditor.txt";
+		public string filename = (string)DEFAULT_FILENAME.Clone();
+
+        //Keywords are reserved words that may not be used as variable names. https://docs.julialang.org/en/v1/base/base/#Keywords
+        static string[] keyword_table =
 		{
 "baremodule","begin","break","catch","const","continue","do","else","elseif","end","export","false","finally","for","function","global","if","import","let","local","macro","module","quote","return", "struct","then","true","try","using","while"
 		};
@@ -66,8 +69,6 @@ namespace CS4308_Project
 			int token = 0;
 			List<string> errorMsgList = new List<string>();
 
-			//This is the name of the program file to be scanned. If it doesn't exist in the proper location, an empty "MyProgramEditor.txt" should be created
-			string filename = "MyProgramEditor.txt";		
 			Console.WriteLine("Beginning scan of file: " + filename);
 			
 			//create file stream
