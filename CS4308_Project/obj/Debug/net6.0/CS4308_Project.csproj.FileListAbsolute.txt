@@ -1,0 +1,15 @@
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\CS4308_Project.exe
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\CS4308_Project.deps.json
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\CS4308_Project.runtimeconfig.json
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\CS4308_Project.dll
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\ref\CS4308_Project.dll
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\bin\Debug\net6.0\CS4308_Project.pdb
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.csproj.AssemblyReference.cache
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.AssemblyInfoInputs.cache
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.AssemblyInfo.cs
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.csproj.CoreCompileInputs.cache
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.dll
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\ref\CS4308_Project.dll
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.pdb
+C:\Users\jcb13\source\repos\CS4308_Project\CS4308_Project\obj\Debug\net6.0\CS4308_Project.genruntimeconfig.cache
